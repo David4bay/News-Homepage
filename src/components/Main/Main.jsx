@@ -2,6 +2,7 @@
 import React, { useReducer, useEffect, useCallback } from 'react';
 import Article from '../Article/Article';
 import Aside from '../Aside/Aside';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
 
@@ -40,7 +41,7 @@ function Main() {
 
     useEffect(() => {
         const media = window.matchMedia(`(max-width: ${width}px)`);
-        
+
         media.addEventListener("change", updateTarget);
     
         if (media.matches) {
@@ -79,6 +80,7 @@ function Main() {
             <Header />
             <Aside />
             <Article />
+            <Footer />
         </React.Fragment>
     )
 }

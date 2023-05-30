@@ -9,10 +9,12 @@ import mediaQuery from '../mediaquery/mediaquery';
 const NavContainer = styled.ul`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
-    width: 100%;
+    width: 500px;
     flex-direction: row;
     justify-content: space-between; 
     height: 70px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
     color: hsl(240, 100%, 5%);
   }

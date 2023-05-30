@@ -3,10 +3,18 @@ import ImageTop from '../assets/images/image-top-laptops.jpg';
 import GamingPad from '../assets/images/image-gaming-growth.jpg';
 import styled from 'styled-components';
 
+const ArticleWrapper = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 32px;
+padding-bottom: 80px;
+`;
+
 const ArticleContainer = styled.div`
 display: flex;
 flex-direction: row;
-gap: 100px;
 `;
 
 const ContentContainer = styled.figure`
@@ -14,6 +22,7 @@ display: flex;
 flex-direction: row;
 margin-left: 15px;
 margin-right: 15px;
+width: 500px;
 `;
 
 const Image = styled.img`
@@ -48,7 +57,7 @@ line-height: 1.6;
 
 function Article() {
     return (
-            <div>
+            <ArticleWrapper>
                 <ArticleContainer>
                     <ContentContainer>
                         <Image 
@@ -106,7 +115,7 @@ function Article() {
                         </SectionContent>
                     </ContentContainer>
                 </ArticleContainer>
-            </div>
+            </ArticleWrapper>
     )
 }
 
