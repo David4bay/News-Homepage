@@ -15,7 +15,7 @@ const NavContainer = styled.ul`
     height: 70px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5px;
+    padding-top: 30px;
     margin-bottom: 30px;
     color: hsl(240, 100%, 5%);
   }
@@ -54,11 +54,20 @@ const MenuItems = styled.ul`
 
 @media (max-width: ${mediaQuery.medium}) {
 
-.Mobile {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    right: 0;
+&.Mobile {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+   padding-left: 50px;
+   margin-top: -10px;
+   font-size: 17px;
+   position: fixed; 
+   right: 0;
+   width: 60%;
+   min-height: 100vh;
+   color: hsl(240, 100%, 5%);
+   background-color: #fff;
 }
 }
 `;
@@ -84,6 +93,7 @@ const CallToActionLogo = styled.i`
     width: 55px;
     height: 55px;
     object-fit: contain;
+    z-index: 99999;
 }
 `;
 
@@ -93,7 +103,23 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
         if (showMenu === false) {
             autoCloseHamburger();
         }
-    }, [showMenu, autoCloseHamburger])
+    }, [autoCloseHamburger, showMenu]);
+
+    useEffect(() => {
+        if (burgerMenu) {
+            document.body.style.backgroundColor = `rgba(0, 0, 0, 0.55)`;
+        } else {
+            document.body.style.backgroundColor = `transparent`;
+        }
+    }, [burgerMenu]);
+
+    useEffect(() => {
+        if (dark) {
+            document.body.style.colorScheme = `dark`;
+        } else {
+            document.body.style.colorScheme = `light`;
+        }
+    }, [dark])
 
     return (
     <div>
@@ -142,7 +168,6 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
 }
                 {
                 burgerMenu === true || showMenu === false 
-                
                 ?
                 (
                 <MenuItems className={burgerMenu ? "Mobile" : "Nav__Items"}>
