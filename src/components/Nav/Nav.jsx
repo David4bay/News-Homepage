@@ -58,16 +58,22 @@ const MenuItems = styled.ul`
    display: flex;
    flex-direction: column;
    align-items: flex-start;
-   justify-content: center;
+   place-content: center;
+   border: transparent;
    padding-left: 50px;
    margin-top: -10px;
-   font-size: 17px;
+   font-size: 22px;
    position: fixed; 
    right: 0;
    width: 60%;
    min-height: 100vh;
    color: hsl(240, 100%, 5%);
    background-color: #fff;
+   z-index: 2;
+}
+
+&.Mobile > li:hover {
+    color: orangered;
 }
 }
 `;
@@ -107,17 +113,19 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
 
     useEffect(() => {
         if (burgerMenu) {
-            document.body.style.backgroundColor = `rgba(0, 0, 0, 0.55)`;
+            document.body.style.backgroundColor = `rgba(0, 0, 0, 0.38)`;
+            document.body.style.position = `fixed`;
         } else {
             document.body.style.backgroundColor = `transparent`;
+            document.body.style.position = `static`;
         }
     }, [burgerMenu]);
 
     useEffect(() => {
         if (dark) {
-            document.body.style.colorScheme = `dark`;
+            document.documentElement.style.colorScheme = `dark`;
         } else {
-            document.body.style.colorScheme = `light`;
+            document.documentElement.style.colorScheme = `light`;
         }
     }, [dark])
 

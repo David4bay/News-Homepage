@@ -18,7 +18,9 @@ const ArticleWrapper = styled.div`
 const ArticleContainer = styled.div`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 `;
 
@@ -44,6 +46,7 @@ const SectionContent = styled.div`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     padding-right: 15px;
 }
 `;
@@ -58,10 +61,17 @@ const ImageHeading = styled.h3`
 
 const ImageSubHeading = styled.strong`
 @media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 20px;
     font-weight: 900;
     color: #00000e;
-    padding-bottom: 18px;
+    height: 18px;
+}
+
+&:active {
+    color: #da635d;
 }
 `;
 
@@ -69,6 +79,7 @@ const ImageParagraph = styled.p`
 @media (max-width: ${mediaQuery.medium}) {
     padding-right: 30px;
     line-height: 1.6;
+    color: #9e9ba4;
 }
 `;
 

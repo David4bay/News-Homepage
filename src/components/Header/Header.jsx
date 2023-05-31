@@ -64,6 +64,10 @@ const Button = styled.button`
     margin-left: 15px;
     color: #fff;
     background-color: hsl(5, 85%, 63%);
+
+    &:active {
+        background-color: #00001a;
+    }
 }
 `;
 
