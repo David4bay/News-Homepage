@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from 'react';
 import Logo from '../assets/images/logo.svg';
 import Hamburger from '../assets/images/icon-menu.svg';
 import HamburgerClosed from '../assets/images/icon-menu-close.svg';
@@ -9,65 +10,90 @@ import mediaQuery from '../mediaquery/mediaquery';
 const NavContainer = styled.ul`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
-    width: 500px;
     flex-direction: row;
     justify-content: space-between; 
     height: 70px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 5px;
     margin-bottom: 30px;
     color: hsl(240, 100%, 5%);
   }
-  display: flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     padding: 25px 15px;
     list-style: none;
 `;
 
 const LogoContainer = styled.li`
-display: flex;
-flex-direction: row;
+@media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: row;
+}
 `;
 
 const DeskTopNav = styled.ul`
-display: flex;
-flex-direction: row;
-justify-content: flex-end;
-list-style: none;
+@media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+}
 `;
 
 const MenuItems = styled.ul`
-display: flex;
-flex-direction: row;
-align-items: center;
-list-style: none;
-gap: 30px;
+@media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+
+@media (max-width: ${mediaQuery.medium}) {
+
+.Mobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+}
+}
 `;
 
 const DarkCloudFavicon = styled.i`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 45px;
-width: 45px;
-position: relative;
+@media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    position: relative;
+}
 `;
 
 const CallToActionLogo = styled.i`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-width: 55px;
-height: 55px;
-object-fit: contain;
+@media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
 `;
 
-function Nav({dark, darkToggle, hamburgerMenu, showMenu, handleHamburger, burgerMenu}) {
+function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoCloseHamburger}) {
+
+    useEffect(() => {
+        if (showMenu === false) {
+            autoCloseHamburger();
+        }
+    }, [showMenu, autoCloseHamburger])
 
     return (
     <div>
@@ -80,7 +106,7 @@ function Nav({dark, darkToggle, hamburgerMenu, showMenu, handleHamburger, burger
                 {
                 dark ? 
                 <DarkCloudFavicon>
-                    <IoCloudyNightOutline 
+                    <IoCloudyNightSharp 
                     size={50} 
                     style={
                         {
@@ -93,7 +119,7 @@ function Nav({dark, darkToggle, hamburgerMenu, showMenu, handleHamburger, burger
                 </DarkCloudFavicon> 
                 :
                 <DarkCloudFavicon>
-                    <IoCloudyNightSharp 
+                    <IoCloudyNightOutline
                     size={20}
                     style={
                         {   
@@ -106,19 +132,30 @@ function Nav({dark, darkToggle, hamburgerMenu, showMenu, handleHamburger, burger
                 </DarkCloudFavicon> 
                 }
             </li>
-            {showMenu ?
-                <CallToActionLogo onClick={handleHamburger}>
+            {
+            showMenu &&
+                (
+                    <CallToActionLogo onClick={handleHamburger}>
                     <img src={burgerMenu ? HamburgerClosed : Hamburger} />
                 </CallToActionLogo>
-                :
-                <MenuItems className={hamburgerMenu ? "Mobile" : "Nav__Items Desktop"}>
+                )
+}
+                {
+                burgerMenu === true || showMenu === false 
+                
+                ?
+                (
+                <MenuItems className={burgerMenu ? "Mobile" : "Nav__Items"}>
                     <li>Home</li>
                     <li>New</li>
                     <li>Popular</li>
                     <li>Trending</li>
                     <li>Categories</li>
                 </MenuItems>
-            }
+                    )
+                    :
+                    ''
+                }
             </DeskTopNav>
         </NavContainer>
     </div>

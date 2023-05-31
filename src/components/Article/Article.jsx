@@ -2,57 +2,74 @@ import RetroImage from '../assets/images/image-retro-pcs.jpg';
 import ImageTop from '../assets/images/image-top-laptops.jpg';
 import GamingPad from '../assets/images/image-gaming-growth.jpg';
 import styled from 'styled-components';
+import mediaQuery from '../mediaquery/mediaquery';
 
 const ArticleWrapper = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 32px;
-padding-bottom: 80px;
+@media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding-bottom: 80px;
+}
 `;
 
 const ArticleContainer = styled.div`
-display: flex;
-flex-direction: row;
+@media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: row;
+}
 `;
 
 const ContentContainer = styled.figure`
-display: flex;
-flex-direction: row;
-margin-left: 15px;
-margin-right: 15px;
-width: 500px;
+@media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: row;
+    height: 165px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
 `;
 
 const Image = styled.img`
-width: 103px;
-height: 140px;
-margin-right: 22px;
+@media (max-width: ${mediaQuery.medium}) {
+    margin-right: 22px;
+    height: 165px;
+    width: 102px;
+}
 `;
 
 const SectionContent = styled.div`
-display: flex;
-flex-direction: column;
-padding-right: 15px;
+@media (max-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+}
 `;
 
 const ImageHeading = styled.h3`
-font-size: 42px;
-font-weight: 700;
-color: #c7c6cc;
+@media (max-width: ${mediaQuery.medium}) {
+    font-size: 42px;
+    font-weight: 700;
+    color: #c7c6cc;
+}
 `;
 
 const ImageSubHeading = styled.strong`
-font-size: 20px;
-font-weight: 900;
-color: #00000e;
-padding-bottom: 18px;
+@media (max-width: ${mediaQuery.medium}) {
+    font-size: 20px;
+    font-weight: 900;
+    color: #00000e;
+    padding-bottom: 18px;
+}
 `;
 
 const ImageParagraph = styled.p`
-padding-right: 30px;
-line-height: 1.6;
+@media (max-width: ${mediaQuery.medium}) {
+    padding-right: 30px;
+    line-height: 1.6;
+}
 `;
 
 function Article() {

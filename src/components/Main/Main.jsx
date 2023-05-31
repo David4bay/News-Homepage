@@ -18,6 +18,10 @@ function Main() {
                 return {...state, menu: action.payload}
             case 'ToggleSideNav':
                 return {...state, burgerMenu: !state.burgerMenu}
+            case 'AutoCloseHamburger':
+                return {...state, burgerMenu: action.payload}
+            default:
+                return {...state}
         }
     }
     
@@ -66,6 +70,10 @@ function Main() {
         e.preventDefault();
         return dispatch({type: 'ToggleSideNav'})
     }
+
+    const autoCloseHamburger = useCallback(() => {
+        return dispatch({type: 'AutoCloseHamburger', payload: false})
+    }, [state.showMenu])
     
     return (
         <React.Fragment>
@@ -76,6 +84,7 @@ function Main() {
             showMenu={showMenu}
             burgerMenu={state.burgerMenu}
             handleHamburger={handleHamburger}
+            autoCloseHamburger={autoCloseHamburger}
             />
             <Header />
             <Aside />

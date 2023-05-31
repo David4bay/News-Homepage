@@ -1,12 +1,16 @@
-import React from 'react'
 import './App.css'
 import Main from './components/Main/Main';
+import styled from 'styled-components';
+
+const AppStyle = styled.div`
+  max-width: 1440px;
+` ;
 
 function App() {
   return (
-    <React.Fragment>
+    <AppStyle>
       <Main />
-    </React.Fragment>
+    </AppStyle>
   )
 }
 
