@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Article from "../Article/Article";
 import Aside from "../Aside/Aside";
 import Footer from "../Footer/Footer";

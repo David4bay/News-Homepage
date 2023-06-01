@@ -71,9 +71,9 @@ const MenuItems = styled.ul`
    place-content: center;
    border: transparent;
    padding-left: 50px;
-   margin-top: -10px;
    font-size: 22px;
-   position: fixed; 
+   margin-top: -30px;
+   position: absolute; 
    right: 0;
    width: 60%;
    min-height: 100vh;
