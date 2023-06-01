@@ -20,7 +20,7 @@ const NavContainer = styled.ul`
     color: hsl(240, 100%, 5%);
   }
 
-  @media (min-width: ${mediaQuery.medium}) {
+  @media (min-width: 769px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -44,7 +44,7 @@ const DeskTopNav = styled.ul`
     justify-content: flex-end;
     list-style: none;
 }
-@media (min-width: ${mediaQuery.medium}) {
+@media (min-width: 769px) {
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -86,7 +86,7 @@ const MenuItems = styled.ul`
     color: orangered;
 }
 }
-@media (min-width: ${mediaQuery.medium}) {
+@media (min-width: 769px) {
 &.Nav__Items {
     display: flex;
     flex-direction: row;
@@ -182,7 +182,8 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
                             width: '100%',
                             height: '100%',
                             paddingRight: '10px',
-                            filter: `${dark ? 'brightness(0) invert(1)' : 'invert(0)'}`
+                            color: 'gold',
+                            
                         }
                     }
                     />
@@ -195,7 +196,7 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
                         {   
                             width: '100%',
                             height: '100%',
-                            paddingRight: '10px'
+                            paddingRight: '10px',
                         }
                     }
                     />

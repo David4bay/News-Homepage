@@ -18,13 +18,26 @@ const ImageContainer = styled.div`
     flex-direction: row;
     padding-left: 15px;
     padding-right: 15px;
-    object-fit: cover;
     justify-content: center;
     margin-bottom: 22px;
 }
-    &.Header__Image {
-        height: 400px;
+
+@media (min-width: $769px) {
+    
+}
+
+@media (max-width: ${mediaQuery.medium}) {
+    & > .Header__Image {
+        width: 500px;
+        min-width: 355px;
+        object-fit: contain;
     }
+}
+
+@media (min-width: $769px) {
+    & > .Header__Image {
+    }
+}
 `;
 
 const Title = styled.h1`
@@ -85,13 +98,6 @@ function Header({dark, menu}) {
                 <img
                 className="Header__Image" 
                 src={`${menu ? web3MobileImage : web3DesktopImage}`}
-                
-                style={
-                    {   width: '500px',
-                        minWidth: '355px',
-                        objectFit: 'contain'
-                    }
-                }
                 alt="main image" 
                 />
             </ImageContainer>

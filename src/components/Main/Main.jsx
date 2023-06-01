@@ -2,6 +2,7 @@
 import { useReducer, useEffect, useCallback } from 'react';
 import Article from '../Article/Article';
 import Aside from '../Aside/Aside';
+import Body from '../Body/Body';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
@@ -86,13 +87,10 @@ function Main() {
             handleHamburger={handleHamburger}
             autoCloseHamburger={autoCloseHamburger}
             />
-            <Header
+            <Body 
             dark={state.dark}
             menu={state.menu}
             />
-            <Aside />
-            <Article />
-            <Footer />
         </>
     )
 }

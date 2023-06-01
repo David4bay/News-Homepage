@@ -8,6 +8,7 @@ font-weight: 900;
 background-color: #000;
 padding: 10px;
 color: #fff;
+margin-top: 120px;
 `;
 
 const LinkStyle = styled.a`
