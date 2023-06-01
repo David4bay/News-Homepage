@@ -1,21 +1,25 @@
 /* eslint-disable react/prop-types */
 import Article from "../Article/Article";
 import Aside from "../Aside/Aside";
-import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import styled from "styled-components";
 
+const GridContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+`
 
 function Body({dark, menu}) {
     return (
-        <>
-        <Header 
+        <GridContainer className="Grid">
+        <Header className="Header" 
         dark={dark}
         menu={menu}
         />
         <Aside />
         <Article />
-        <Footer />
-        </>
+        </GridContainer>
     )
 }
 

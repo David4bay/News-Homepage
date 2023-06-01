@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useReducer, useEffect, useCallback } from 'react';
 import Body from '../Body/Body';
+import Footer from '../Footer/Footer';
 import Nav from '../Nav/Nav';
 
 function Main() {
@@ -87,6 +88,7 @@ function Main() {
             dark={state.dark}
             menu={state.menu}
             />
+            <Footer />
         </>
     )
 }

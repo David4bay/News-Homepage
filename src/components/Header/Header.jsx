@@ -10,6 +10,16 @@ const HeaderContainer = styled.div`
     flex-direction: column;
     padding-bottom: 65px;
 }
+
+@media (min-width: ${mediaQuery.medium}) {
+    display: grid;
+    margin-left: 15px;
+    margin-right: 15px;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
 `;
 
 const ImageContainer = styled.div`
@@ -22,9 +32,22 @@ const ImageContainer = styled.div`
     margin-bottom: 22px;
 }
 
-@media (min-width: $769px) {
-    
+@media (min-width: ${mediaQuery.medium}) {
+    & {
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    height: 100%;
+    }
 }
+
+@media (min-width: ${mediaQuery.medium}) {
+    & > .Header__Image {
+        width: 100%;
+        display: grid;
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
 
 @media (max-width: ${mediaQuery.medium}) {
     & > .Header__Image {
@@ -33,10 +56,6 @@ const ImageContainer = styled.div`
         object-fit: contain;
     }
 }
-
-@media (min-width: $769px) {
-    & > .Header__Image {
-    }
 }
 `;
 
@@ -49,12 +68,33 @@ const Title = styled.h1`
     font-weight: 800;
     font-size: 48px;
 }
+
+@media (min-width: ${mediaQuery.medium}) {
+    & {
+        display: grid;
+        grid-column: 1/2;
+        grid-row: 1/3;
+        color: hsl(240, 100%, 5%);
+        font-weight: 800;
+        font-size: 52px;
+    }
+}
 `;
 
 const Section = styled.div`
 @media (max-width: ${mediaQuery.medium}) {
     margin: auto;
     max-width: 500px;
+}
+
+@media (min-width: ${mediaQuery.medium}) {
+    & {
+        display: grid;
+        grid-column: 1/3;
+        grid-row: 2/3;
+        padding-top: 20px;
+        gap: 12px;
+    }
 }
 `;
 
@@ -68,6 +108,19 @@ const Content = styled.p`
     line-height: 1.7;
     word-spacing: 1px;
     padding-bottom: 30px;
+}
+
+@media (min-width: ${mediaQuery.medium}) {
+    & {
+        display: grid;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        font-size: 18px;
+        font-weight: 500;
+        color: hsl(236, 13%, 42%);
+        line-height: 1.7;
+        word-spacing: 1px;
+    }
 }
 `;
 
@@ -86,6 +139,25 @@ const Button = styled.button`
     &:active {
         background-color: #00001a;
         border: 1px solid #fff;
+    }
+
+}
+@media (min-width: 769px) {
+    & {
+        display: grid;
+        grid-column: 2/3;
+        justify-self: start;
+        align-self: start;
+        grid-row: 2/3;
+        width: 188px;
+        padding: 20px 0px;
+        color: #fff;
+        background-color: hsl(5, 85%, 63%);
+        font-size: 17px;
+        font-weight: 700;
+        border: 1px solid transparent;
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
 }
 `;
@@ -109,7 +181,7 @@ function Header({dark, menu}) {
             We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
   But is it really fulfilling its promise?
             </Content>
-            <Button>
+            <Button className="Button">
             Read more
             </Button>
             </Section>
