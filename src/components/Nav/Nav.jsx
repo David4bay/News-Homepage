@@ -86,6 +86,7 @@ const MenuItems = styled.ul`
     color: orangered;
 }
 }
+
 @media (min-width: 769px) {
 &.Nav__Items {
     display: flex;
