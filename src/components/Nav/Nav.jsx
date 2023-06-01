@@ -13,8 +13,8 @@ const NavContainer = styled.ul`
     flex-direction: row;
     justify-content: space-between; 
     height: 70px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15px;
+    margin-right: 15px;
     padding-top: 30px;
     margin-bottom: 30px;
     color: hsl(240, 100%, 5%);
