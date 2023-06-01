@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import web3MobileImage from '../assets/images/image-web-3-mobile.jpg';
+import web3DesktopImage from '../assets/images/image-web-3-desktop.jpg';
 import styled from 'styled-components';
 import mediaQuery from '../mediaquery/mediaquery';
 
@@ -20,6 +22,9 @@ const ImageContainer = styled.div`
     justify-content: center;
     margin-bottom: 22px;
 }
+    &.Header__Image {
+        height: 400px;
+    }
 `;
 
 const Title = styled.h1`
@@ -58,8 +63,8 @@ const Button = styled.button`
     padding: 20px 30px;
     font-size: 17px;
     font-weight: 700;
+    border: 1px solid transparent;
     letter-spacing: 5px;
-    border: none;
     text-transform: uppercase;
     margin-left: 15px;
     color: #fff;
@@ -67,17 +72,20 @@ const Button = styled.button`
 
     &:active {
         background-color: #00001a;
+        border: 1px solid #fff;
     }
 }
 `;
 
-function Header() {
+function Header({dark, menu}) {
 
     return (
         <HeaderContainer>
-            <ImageContainer className="">
-                <img 
-                src={web3MobileImage}
+            <ImageContainer>
+                <img
+                className="Header__Image" 
+                src={`${menu ? web3MobileImage : web3DesktopImage}`}
+                
                 style={
                     {   width: '500px',
                         minWidth: '355px',
@@ -88,7 +96,7 @@ function Header() {
                 />
             </ImageContainer>
             <Section>
-            <Title>
+            <Title style={{color: `${dark ? '#fff' : 'hsl(240, 100%, 5%)'}`}}>
             The Bright Future of Web 3.0?
             </Title>
             <Content>

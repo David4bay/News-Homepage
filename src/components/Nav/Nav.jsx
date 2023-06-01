@@ -19,12 +19,15 @@ const NavContainer = styled.ul`
     margin-bottom: 30px;
     color: hsl(240, 100%, 5%);
   }
+
+  @media (min-width: ${mediaQuery.medium}) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 25px 15px;
     list-style: none;
+  }
 `;
 
 const LogoContainer = styled.li`
@@ -40,6 +43,13 @@ const DeskTopNav = styled.ul`
     flex-direction: row;
     justify-content: flex-end;
     list-style: none;
+}
+@media (min-width: ${mediaQuery.medium}) {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    list-style: none
 }
 `;
 
@@ -76,6 +86,18 @@ const MenuItems = styled.ul`
     color: orangered;
 }
 }
+@media (min-width: ${mediaQuery.medium}) {
+&.Nav__Items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 40px;
+}
+
+&.Nav__Items > li:active {
+    color: orangered;
+}
+}
 `;
 
 const DarkCloudFavicon = styled.i`
@@ -88,6 +110,14 @@ const DarkCloudFavicon = styled.i`
     width: 45px;
     position: relative;
 }
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    position: relative;
 `;
 
 const CallToActionLogo = styled.i`
@@ -123,9 +153,9 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
 
     useEffect(() => {
         if (dark) {
-            document.documentElement.style.colorScheme = `dark`;
-        } else {
-            document.documentElement.style.colorScheme = `light`;
+            document.documentElement.style.colorScheme = `dark light`;
+         } else {
+            document.documentElement.style.colorScheme = `normal`;
         }
     }, [dark])
 
@@ -133,7 +163,12 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
     <div>
         <NavContainer>
             <LogoContainer className="Logo">
-            <img src={Logo} />
+            <img
+            src={Logo} 
+            style={
+                { filter: `${dark ? 'brightness(0) invert(1)' : 'invert(0)'}`,
+            }}
+            />
             </LogoContainer>
             <DeskTopNav className="Right__Nav">
             <li onClick={darkToggle} className="Night__Mode">
@@ -146,7 +181,8 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
                         {
                             width: '100%',
                             height: '100%',
-                            paddingRight: '10px'
+                            paddingRight: '10px',
+                            filter: `${dark ? 'brightness(0) invert(1)' : 'invert(0)'}`
                         }
                     }
                     />
@@ -170,7 +206,12 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
             showMenu &&
                 (
                     <CallToActionLogo onClick={handleHamburger}>
-                    <img src={burgerMenu ? HamburgerClosed : Hamburger} />
+                    <img
+                    style={{filter: `${dark && burgerMenu === false ? 'brightness(0) invert(1)' : 'invert(0)'}`,
+                    
+                    }} 
+                    src={burgerMenu ? HamburgerClosed : Hamburger} 
+                    />
                 </CallToActionLogo>
                 )
 }

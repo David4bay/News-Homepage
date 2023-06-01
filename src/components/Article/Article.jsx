@@ -28,7 +28,7 @@ const ContentContainer = styled.figure`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
     flex-direction: row;
-    height: 165px;
+    max-width: 500px;
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -37,8 +37,8 @@ const ContentContainer = styled.figure`
 const Image = styled.img`
 @media (max-width: ${mediaQuery.medium}) {
     margin-right: 22px;
-    height: 165px;
     width: 102px;
+    object-fit: cover;
 }
 `;
 
@@ -46,8 +46,8 @@ const SectionContent = styled.div`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     padding-right: 15px;
+    gap: 17px;
 }
 `;
 
@@ -128,7 +128,7 @@ function Article() {
                     <ContentContainer>
                         <Image 
                         src={GamingPad} 
-                        alt="" 
+                        alt="Gamepad" 
                         />
                         <SectionContent>
                         <ImageHeading>

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useReducer, useEffect, useCallback } from 'react';
+import { useReducer, useEffect, useCallback } from 'react';
 import Article from '../Article/Article';
 import Aside from '../Aside/Aside';
 import Footer from '../Footer/Footer';
@@ -76,7 +76,7 @@ function Main() {
     }, [state.showMenu])
     
     return (
-        <React.Fragment>
+        <>
             <Nav 
             dark={state.dark}
             hamburgerState={state.burgerMenu} 
@@ -86,11 +86,14 @@ function Main() {
             handleHamburger={handleHamburger}
             autoCloseHamburger={autoCloseHamburger}
             />
-            <Header />
+            <Header
+            dark={state.dark}
+            menu={state.menu}
+            />
             <Aside />
             <Article />
             <Footer />
-        </React.Fragment>
+        </>
     )
 }
 export default Main;
