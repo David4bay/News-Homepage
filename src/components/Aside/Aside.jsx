@@ -7,12 +7,30 @@ const AsideWrapper = styled.div`
     flex-direction: column;
     align-items: center;
 }
+
+@media (min-width: 769px) {
+    display: grid;
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
 `;
 
 const AsideContainer = styled.div`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
     flex-direction: column;
+    max-width: 500px;
+    background-color: #00001a;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 30px;
+    margin-bottom: 64px;
+}
+
+@media (min-width: 769px) {
+    display: grid;
+
+    color: #fff;
     max-width: 500px;
     background-color: #00001a;
     margin-left: 15px;

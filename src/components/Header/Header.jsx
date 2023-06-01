@@ -11,7 +11,7 @@ const HeaderContainer = styled.div`
     padding-bottom: 65px;
 }
 
-@media (min-width: ${mediaQuery.medium}) {
+@media (min-width: 769px) {
     display: grid;
     margin-left: 15px;
     margin-right: 15px;
@@ -26,37 +26,40 @@ const ImageContainer = styled.div`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
     flex-direction: row;
-    padding-left: 15px;
-    padding-right: 15px;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     margin-bottom: 22px;
 }
 
-@media (min-width: ${mediaQuery.medium}) {
+@media (min-width: 769px) {
     & {
     display: grid;
     grid-column: 1/3;
     grid-row: 1/2;
     height: 100%;
+    width: 100%;
     }
 }
 
-@media (min-width: ${mediaQuery.medium}) {
+@media (min-width: 769px) {
     & > .Header__Image {
         width: 100%;
+        height: 100%;
         display: grid;
         grid-column: 1/3;
         grid-row: 1/2;
     }
+}
 
 @media (max-width: ${mediaQuery.medium}) {
     & > .Header__Image {
-        width: 500px;
-        min-width: 355px;
+        width: 100%;
+        height: 100%;
         object-fit: contain;
     }
 }
-}
+
 `;
 
 const Title = styled.h1`
@@ -69,14 +72,14 @@ const Title = styled.h1`
     font-size: 48px;
 }
 
-@media (min-width: ${mediaQuery.medium}) {
+@media (min-width: 769px) {
     & {
         display: grid;
         grid-column: 1/2;
         grid-row: 1/3;
         color: hsl(240, 100%, 5%);
         font-weight: 800;
-        font-size: 52px;
+        font-size: clamp(48px, 5vw, 64px);
     }
 }
 `;
@@ -87,7 +90,7 @@ const Section = styled.div`
     max-width: 500px;
 }
 
-@media (min-width: ${mediaQuery.medium}) {
+@media (min-width: 769px) {
     & {
         display: grid;
         grid-column: 1/3;
@@ -110,16 +113,16 @@ const Content = styled.p`
     padding-bottom: 30px;
 }
 
-@media (min-width: ${mediaQuery.medium}) {
+@media (min-width: 769px) {
     & {
         display: grid;
         grid-column: 2/3;
         grid-row: 1/2;
-        font-size: 18px;
         font-weight: 500;
         color: hsl(236, 13%, 42%);
         line-height: 1.7;
         word-spacing: 1px;
+        font-size: 20px;
     }
 }
 `;
