@@ -108,7 +108,7 @@ const SubText = styled.p`
 @media (min-width: 769px) {
     display: block;
     color: #c4c5d9;
-    font-size: clamp(15px, 1vw, 20px);
+    font-size: 21px;
     font-weight: 300;
     padding-left: 8px;
     padding-bottom: 35px;
@@ -116,6 +116,7 @@ const SubText = styled.p`
     margin-right: 50px;
     line-height: 1.7;
     border-bottom: 1px solid #c4c5d9;
+    
 }
 `;
 
