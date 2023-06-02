@@ -23,9 +23,9 @@ color: hotpink;
 
 function Footer() {
     return (
-        <FooterStyle>
+        <FooterStyle role="ending">
             <p>
-                Coded by <LinkStyle href="https://github.com/David4bay" >David Bayode</LinkStyle>
+                Coded by <LinkStyle href="https://github.com/David4bay" rel="noopener noreferrer" target=" _blank" >David Bayode</LinkStyle>
             </p>
         </FooterStyle>
     )

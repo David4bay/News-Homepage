@@ -175,7 +175,7 @@ const Button = styled.button`
 function Header({dark, menu}) {
 
     return (
-        <HeaderContainer>
+        <HeaderContainer role="header">
             <ImageContainer>
                 <img
                 className="Header__Image" 

@@ -158,7 +158,7 @@ const ImageParagraph = styled.p`
 
 function Article({dark}) {
     return (
-            <ArticleWrapper>
+            <ArticleWrapper role="contentinfo">
                 <ArticleContainer>
                     <ContentContainer>
                         <Image 
@@ -175,6 +175,7 @@ function Article({dark}) {
                                 color: `${dark ? '#da635d' : '#09061b'}`
                             }
                         }
+                        alt="Keyboard Image"
                         >
                         Reviving Retro PCs
                         </ImageSubHeading>

@@ -168,7 +168,7 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
 
     return (
     <div>
-        <NavContainer>
+        <NavContainer role="navigation">
             <LogoContainer className="Logo">
             <img
             src={Logo} 
