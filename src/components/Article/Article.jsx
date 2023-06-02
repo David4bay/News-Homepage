@@ -23,7 +23,7 @@ const ArticleWrapper = styled.div`
     grid-template-rows: 1fr;
     width: 100%;
     height: 100%;
-    margin-top: 55px;
+    margin-top: 20px;
     padding-left: 15px;
 }
 `;

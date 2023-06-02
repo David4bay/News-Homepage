@@ -14,6 +14,7 @@ const AsideWrapper = styled.div`
     grid-row: 1/2;
     padding-right: 20px;
     margin-left: 15px;
+    height: 730px;
 }
 `;
 
