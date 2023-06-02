@@ -72,6 +72,7 @@ const StrongText = styled.strong`
     font-size: 20px;
     font-weight: 700;
     padding-left: 8px;
+    transition: color 0.4s ease;
 
     &:hover {
         cursor: pointer;
