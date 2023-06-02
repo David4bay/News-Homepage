@@ -1,7 +1,5 @@
 # Frontend Mentor - News homepage
 
-![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)
-
 ## Welcome! 👋
 
 Thanks for checking my solution to this front-end coding challenge.
@@ -18,3 +16,7 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+
+## Screenshot
+
+![Screenshot](/src/screenshot/screenshot.PNG)
