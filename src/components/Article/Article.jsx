@@ -116,8 +116,8 @@ const ImageSubHeading = styled.strong`
     color: #00000e;
     height: 18px;
 
-    &:active {
-        color: #da635d;
+    &:hover {
+        color: hsl(5, 85%, 63%);
     }
 }
 
@@ -131,8 +131,9 @@ const ImageSubHeading = styled.strong`
     height: 18px;
     padding-top: 10px;
 
-    &:active {
-        color: #da635d;
+    &:hover {
+        cursor: pointer;
+        color: hsl(5, 85%, 63%);
     }
 }
 
