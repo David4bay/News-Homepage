@@ -72,6 +72,11 @@ const StrongText = styled.strong`
     font-size: 20px;
     font-weight: 700;
     padding-left: 8px;
+
+    &:hover {
+        cursor: pointer;
+        color: #e7ab62;
+    }
 }
 
 @media (min-width: 769px) {
