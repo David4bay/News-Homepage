@@ -231,7 +231,7 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
                 className={burgerMenu ? "Mobile" : "Nav__Items"}
                 style={
                     {
-                        backgroundColor: `${dark && burgerMenu === false ? 'transparent' : 'rgb(0,0,0)'}`,
+                        backgroundColor: `${dark && burgerMenu === false ? 'transparent' : dark ? 'rgb(0,0,0)' : '#fff'}`,
                         color: `${dark ? '#fff' : 'hsl(240, 100%, 5%)'}`
                     }
                 }

@@ -57,7 +57,7 @@ const ContentContainer = styled.figure`
     transition: all 0.4s ease;
 
     &:hover {
-        box-shadow: 0px 1px 1px 2px hsla(100, 0%, 100%, 0.15);
+        box-shadow: -2px 2px 1px 0px hsla(100, 0%, 100%, 0.15);
         transform: translateY(-5px);
     }
 }
