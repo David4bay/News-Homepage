@@ -108,13 +108,14 @@ const SubText = styled.p`
 @media (min-width: 769px) {
     display: block;
     color: #c4c5d9;
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 300;
     padding-left: 8px;
     padding-bottom: 35px;
     padding-top: 22px;
     margin-right: 50px;
-    line-height: 1.7;
+    line-height: 1.9;
+    word-spacing: 2px;
     border-bottom: 1px solid #c4c5d9;
     
 }
