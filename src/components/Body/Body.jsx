@@ -9,9 +9,9 @@ const GridContainer = styled.div`
 @media (min-width: 769px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 800px;
 }
-`;
+`
 
 function Body({dark, menu}) {
     return (

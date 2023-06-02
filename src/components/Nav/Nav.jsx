@@ -90,13 +90,19 @@ const MenuItems = styled.ul`
 @media (min-width: 769px) {
 &.Nav__Items {
     display: flex;
+    font-size: 22px;
     flex-direction: row;
     list-style: none;
-    gap: 40px;
+    gap: 50px;
+    cursor: pointer;
 }
 
-&.Nav__Items > li:active {
+&.Nav__Items > li:hover {
     color: orangered;
+}
+&.Nav__Items > li:active {
+    cursor: pointer;
+    color: red;
 }
 }
 `;

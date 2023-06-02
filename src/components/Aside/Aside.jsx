@@ -12,8 +12,7 @@ const AsideWrapper = styled.div`
     display: grid;
     grid-column: 3/4;
     grid-row: 1/2;
-    height: max-content;
-    margin-left: 15px;
+    margin-right: 15px;
 }
 `;
 
@@ -21,6 +20,7 @@ const AsideContainer = styled.div`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
     flex-direction: column;
+    flex-shrink: 1;
     max-width: 500px;
     background-color: #00001a;
     margin-left: 15px;
@@ -30,12 +30,9 @@ const AsideContainer = styled.div`
 }
 
 @media (min-width: 769px) {
-    display: flex;
-    flex-direction: column;
     color: #fff;
     background-color: #00001a;
-    padding-bottom: 120px;
-    margin-bottom: 64px;
+
 }
 `;
 
@@ -54,10 +51,9 @@ const AsideTitle = styled.h2`
 @media (min-width: 769px) {
     font-size: 45px;
     padding-left: 22px;
-    padding-right: 15px;
     max-width: 500px;
     padding-top: 28px;
-    padding-bottom: 40px;
+    padding-bottom: 0px;
     color: #e7ab62;
     font-weight: 800;
 }
@@ -74,10 +70,18 @@ const StrongText = styled.strong`
 @media (min-width: 769px) {
     display: flex;
     align-items: flex-start;
+    flex-grow: 0;
     color: #fff;
+    flex-grow: 0;
     font-size: 28px;
     font-weight: 700;
     margin-left: 8px;
+    transition: color 0.4s ease;
+
+    &:hover {
+        cursor: pointer;
+        color: #e7ab62;
+    }
 }
 `;
 
@@ -95,13 +99,14 @@ const SubText = styled.p`
 }
 
 @media (min-width: 769px) {
+    display: block;
     color: #c4c5d9;
-    font-size: 15px;
+    font-size: clamp(15px, 1vw, 20px);
     font-weight: 300;
     padding-left: 8px;
     padding-bottom: 35px;
     padding-top: 22px;
-    margin-right: 15px;
+    margin-right: 50px;
     line-height: 1.7;
     border-bottom: 1px solid #c4c5d9;
 }
@@ -116,7 +121,7 @@ const InnerContent = styled.div`
 @media (min-width: 769px) {
     display: flex;
     flex-direction: column;
-
+    justify-content: space-evenly;
 }
 `;
 
@@ -139,7 +144,7 @@ const SubContent = styled.div`
 
 @media (min-width: 769px) {
     padding-left: 15px;
-    font-size: 32px;
+    flex-grow: 0;
 
     &:first-child > ${SubText} {
         padding-right: 15px;

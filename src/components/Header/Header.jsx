@@ -14,11 +14,13 @@ const HeaderContainer = styled.div`
 @media (min-width: 769px) {
     display: grid;
     margin-left: 15px;
-    margin-right: 15px;
     grid-column: 1/4;
     grid-row: 1/2;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    width: 96%;
+    height: 100%;
+
 }
 `;
 
@@ -96,7 +98,6 @@ const Section = styled.div`
         grid-column: 1/3;
         grid-row: 2/3;
         padding-top: 20px;
-        gap: 12px;
     }
 }
 `;
@@ -153,7 +154,8 @@ const Button = styled.button`
         align-self: start;
         grid-row: 2/3;
         width: 188px;
-        padding: 20px 0px;
+        padding: 25px 0px;
+        margin-top: 25px;
         color: #fff;
         background-color: hsl(5, 85%, 63%);
         font-size: 17px;
@@ -161,6 +163,12 @@ const Button = styled.button`
         border: 1px solid transparent;
         letter-spacing: 2px;
         text-transform: uppercase;
+        transition: all 0.4s ease;
+    }
+
+    &:hover {
+        background-color: #00001a;
+        border: 1px solid #fff;
     }
 }
 `;
