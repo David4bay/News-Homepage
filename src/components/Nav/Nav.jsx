@@ -27,6 +27,7 @@ const NavContainer = styled.ul`
     align-items: center;
     padding: 25px 15px;
     list-style: none;
+    max-width: 1880px;
   }
 `;
 
@@ -69,7 +70,7 @@ const MenuItems = styled.ul`
    flex-direction: column;
    align-items: flex-start;
    place-content: center;
-   border: transparent;
+   border: none;
    padding-left: 50px;
    font-size: 22px;
    margin-top: -30px;
@@ -78,7 +79,6 @@ const MenuItems = styled.ul`
    width: 60%;
    min-height: 100vh;
    color: hsl(240, 100%, 5%);
-   background-color: #fff;
    z-index: 2;
 }
 
@@ -149,7 +149,7 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
     }, [autoCloseHamburger, showMenu]);
 
     useEffect(() => {
-        if (burgerMenu) {
+        if (burgerMenu || burgerMenu) {
             document.body.style.backgroundColor = `rgba(0, 0, 0, 0.38)`;
             document.body.style.position = `fixed`;
         } else {
@@ -215,7 +215,7 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
                 (
                     <CallToActionLogo onClick={handleHamburger}>
                     <img
-                    style={{filter: `${dark && burgerMenu === false ? 'brightness(0) invert(1)' : 'invert(0)'}`,
+                    style={{filter: `${dark && burgerMenu === false ? 'brightness(0) invert(1)' : 'contrast(0)'}`,
                     
                     }} 
                     src={burgerMenu ? HamburgerClosed : Hamburger} 
@@ -227,7 +227,15 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
                 burgerMenu === true || showMenu === false 
                 ?
                 (
-                <MenuItems className={burgerMenu ? "Mobile" : "Nav__Items"}>
+                <MenuItems 
+                className={burgerMenu ? "Mobile" : "Nav__Items"}
+                style={
+                    {
+                        backgroundColor: `${dark && burgerMenu === false ? 'transparent' : 'rgb(0,0,0)'}`,
+                        color: `${dark ? '#fff' : 'hsl(240, 100%, 5%)'}`
+                    }
+                }
+                >
                     <li>Home</li>
                     <li>New</li>
                     <li>Popular</li>

@@ -12,7 +12,8 @@ const AsideWrapper = styled.div`
     display: grid;
     grid-column: 3/4;
     grid-row: 1/2;
-    margin-right: 15px;
+    padding-right: 20px;
+    margin-left: 15px;
 }
 `;
 
@@ -56,6 +57,11 @@ const AsideTitle = styled.h2`
     padding-bottom: 0px;
     color: #e7ab62;
     font-weight: 800;
+    transition: all 0.4s ease;
+
+    &:hover {
+        color: gold;
+    }
 }
 `;
 
@@ -121,7 +127,8 @@ const InnerContent = styled.div`
 @media (min-width: 769px) {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    height: 100%;
+    padding-top: 50px;
 }
 `;
 

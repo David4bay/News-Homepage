@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const FooterStyle = styled.div`
-width: 100%;
+position: relative;
+width: 100vw;
 text-align: center;
 font-size: 17px;
 font-weight: 900;
