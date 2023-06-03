@@ -4,7 +4,7 @@ import web3DesktopImage from '../assets/images/image-web-3-desktop.jpg';
 import styled from 'styled-components';
 import mediaQuery from '../mediaquery/mediaquery';
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
     flex-direction: column;
