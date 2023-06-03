@@ -23,7 +23,7 @@ color: hotpink;
 
 function Footer() {
     return (
-        <FooterStyle role="ending">
+        <FooterStyle>
             <p>
                 Coded by <LinkStyle href="https://github.com/David4bay" rel="noopener noreferrer" target=" _blank" >David Bayode</LinkStyle>
             </p>

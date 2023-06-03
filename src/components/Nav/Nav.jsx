@@ -7,7 +7,7 @@ import { IoCloudyNightOutline, IoCloudyNightSharp } from 'react-icons/io5';
 import styled from 'styled-components';
 import mediaQuery from '../mediaquery/mediaquery';
 
-const NavContainer = styled.ul`
+const NavContainer = styled.nav`
 @media (max-width: ${mediaQuery.medium}) {
     display: flex;
     flex-direction: row;
@@ -175,6 +175,7 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
             style={
                 { filter: `${dark ? 'brightness(0) invert(1)' : 'invert(0)'}`,
             }}
+            alt="logo"
             />
             </LogoContainer>
             <DeskTopNav className="Right__Nav">
@@ -193,6 +194,7 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
                             
                         }
                     }
+                    alt="dark mode"
                     />
                 </DarkCloudFavicon> 
                 :
@@ -206,6 +208,7 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
                             paddingRight: '10px',
                         }
                     }
+                    alt="light mode"
                     />
                 </DarkCloudFavicon> 
                 }
