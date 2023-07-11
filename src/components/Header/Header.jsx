@@ -14,12 +14,8 @@ const HeaderContainer = styled.header`
 @media (min-width: 769px) {
     display: grid;
     margin-left: 15px;
-    grid-column: 1/4;
-    grid-row: 1/2;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    width: 98%;
-    height: 100%;
+    grid-column: 1/3;
+    grid-template-rows: auto;
 }
 `;
 
@@ -77,7 +73,6 @@ const Title = styled.h1`
     & {
         display: grid;
         grid-column: 1/2;
-        grid-row: 1/3;
         color: hsl(240, 100%, 5%);
         font-weight: 800;
         font-size: clamp(48px, 5vw, 64px);
@@ -117,12 +112,12 @@ const Content = styled.p`
     & {
         display: grid;
         grid-column: 2/3;
-        grid-row: 1/2;
+        height: max-content;
         font-weight: 500;
         color: hsl(236, 13%, 42%);
-        line-height: 1.7;
+        line-height: 1.8;
         word-spacing: 1px;
-        font-size: 20px;
+        font-size: clamp(19px, 1vw, 21px);
     }
 }
 `;
@@ -148,13 +143,11 @@ const Button = styled.button`
 @media (min-width: 769px) {
     & {
         display: grid;
-        grid-column: 2/3;
-        justify-self: start;
-        align-self: start;
-        grid-row: 2/3;
+        height: max-content;
+        grid-column: 2;
+        grid-row: 2;
         width: 188px;
         padding: 25px 0px;
-        margin-top: 25px;
         color: #fff;
         background-color: hsl(5, 85%, 63%);
         font-size: 17px;

@@ -8,7 +8,7 @@ const GridContainer = styled.div`
 @media (min-width: 769px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 800px;
+    grid-template-rows: auto;
     max-width: 1880px;
     margin: auto;
 }

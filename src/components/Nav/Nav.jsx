@@ -149,7 +149,7 @@ function Nav({dark, darkToggle, showMenu, handleHamburger, burgerMenu, autoClose
     }, [autoCloseHamburger, showMenu]);
 
     useEffect(() => {
-        if (burgerMenu || burgerMenu) {
+        if (burgerMenu) {
             document.body.style.backgroundColor = `rgba(0, 0, 0, 0.38)`;
             document.body.style.position = `fixed`;
         } else {

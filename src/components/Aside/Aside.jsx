@@ -10,11 +10,8 @@ const AsideWrapper = styled.div`
 
 @media (min-width: 769px) {
     display: grid;
-    grid-column: 3/4;
-    grid-row: 1/2;
-    padding-right: 20px;
+    padding-right: 10px;
     margin-left: 15px;
-    height: 730px;
 }
 `;
 
@@ -83,10 +80,8 @@ const StrongText = styled.strong`
 @media (min-width: 769px) {
     display: flex;
     align-items: flex-start;
-    flex-grow: 0;
     color: #fff;
-    flex-grow: 0;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 700;
     margin-left: 8px;
     transition: color 0.4s ease;
@@ -114,7 +109,7 @@ const SubText = styled.p`
 @media (min-width: 769px) {
     display: block;
     color: #c4c5d9;
-    font-size: 22px;
+    font-size: clamp(19px, 1vw, 21px);
     font-weight: 300;
     padding-left: 8px;
     padding-bottom: 35px;
@@ -136,7 +131,6 @@ const InnerContent = styled.div`
 @media (min-width: 769px) {
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding-top: 50px;
 }
 `;
@@ -160,7 +154,6 @@ const SubContent = styled.div`
 
 @media (min-width: 769px) {
     padding-left: 15px;
-    flex-grow: 0;
 
     &:first-child > ${SubText} {
         padding-right: 15px;

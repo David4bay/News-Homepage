@@ -18,13 +18,12 @@ const ArticleWrapper = styled.div`
 @media (min-width: 769px) {
     display: grid;
     grid-column: 1/4;
-    grid-row: 2;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    width: 100%;
-    height: 100%;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, max-content));
+    justify-content: space-between;
+    grid-template-rows: auto;
+    column-gap: 10px;    
     padding-left: 15px;
+    padding-right: 15px;
 }
 `;
 
@@ -38,8 +37,11 @@ const ArticleContainer = styled.div`
 
 @media (min-width: 769px) {
     display: grid;
-    grid-row: 2/3;
+    margin-top: 25%;
+    grid-row: 1/4;
     justify-content: space-between;
+    overflow: hidden;
+    height: max-content;
 }
 `;
 
@@ -53,7 +55,10 @@ const ContentContainer = styled.figure`
 }
 
 @media (min-width: 769px) {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 25px;
+    width: 500px;
     transition: all 0.4s ease;
 
     &:hover {
@@ -71,8 +76,8 @@ const Image = styled.img`
 }
 
 @media (min-width: 769px) {
-    margin-right: 22px;
-    object-fit: cover;
+    display: inline;
+    width: 180px;
 }
 `;
 
@@ -85,10 +90,8 @@ const SectionContent = styled.div`
 }
 
 @media (min-width: 769px) {
-    display: flex;
-    flex-direction: column;
-    gap: 17px;
-
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr
 }
 `;
 
@@ -100,7 +103,7 @@ const ImageHeading = styled.h3`
 }
 
 @media (min-width: 769px) {
-    font-size: 64px;
+    font-size: 68px;
     font-weight: 700;
     color: #c7c6cc;
 }
@@ -125,11 +128,9 @@ const ImageSubHeading = styled.strong`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 900;
     color: #00000e;
-    height: 18px;
-    padding-top: 10px;
 
     &:hover {
         cursor: pointer;
@@ -149,9 +150,8 @@ const ImageParagraph = styled.p`
 @media (min-width: 769px) {
     display: flex;
     padding-right: 50px;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 1.8;
-    height: 100%;
     align-items: center;
 }
 `;

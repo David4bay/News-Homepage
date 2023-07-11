@@ -4,30 +4,29 @@ import Body from '../Body/Body';
 import Footer from '../Footer/Footer';
 import Nav from '../Nav/Nav';
 
-function Main() {
+const reducer = (state, action) => {
+    switch(action.type) {
+        case 'Dark':
+            return {...state, dark: !state.dark}
+        case 'OpenMenuToggle':
+            return {...state, menu: action.payload}
+        case 'CloseMenuToggle':
+            return {...state, menu: action.payload}
+        case 'ToggleSideNav':
+            return {...state, burgerMenu: !state.burgerMenu}
+        case 'AutoCloseHamburger':
+            return {...state, burgerMenu: action.payload}
+        default:
+            return {...state}
+    }
+}
 
-    const reducer = (state, action) => {
-        switch(action.type) {
-            case 'Dark':
-                return {...state, dark: !state.dark}
-            case 'OpenMenuToggle':
-                return {...state, menu: action.payload}
-            case 'CloseMenuToggle':
-                return {...state, menu: action.payload}
-            case 'ToggleSideNav':
-                return {...state, burgerMenu: !state.burgerMenu}
-            case 'AutoCloseHamburger':
-                return {...state, burgerMenu: action.payload}
-            default:
-                return {...state}
-        }
-    }
-    
-    const initialState = {
-        dark: false,
-        menu: false,
-        burgerMenu: false
-    }
+const initialState = {
+    dark: false,
+    menu: false,
+    burgerMenu: false
+}
+function Main() {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -74,7 +73,7 @@ function Main() {
     }, [state.showMenu])
     
     return (
-        <>
+        <div>
             <Nav 
             dark={state.dark}
             hamburgerState={state.burgerMenu} 
@@ -89,7 +88,7 @@ function Main() {
             menu={state.menu}
             />
             <Footer />
-        </>
+        </div>
     )
 }
 
